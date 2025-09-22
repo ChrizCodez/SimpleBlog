@@ -1,0 +1,26 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 2em;
+    background-color: #353535;
+    color: #ab6648;
+   
+    
+}
+
+h1, h2 {
+    color: #e34b0a;
+}
+
+.post {
+    background-color: rgb(0, 0, 0);
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(173, 53, 24, 0.8);
+}
+
+a {
+    text-decoration: none;
+    color: #e0622b;
+}

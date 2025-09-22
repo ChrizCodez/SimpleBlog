@@ -1,7 +1,16 @@
-<h1>Blog Posts</h1>
-{% for post in posts %}
-    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-    <p>{{ post.content|truncatewords:30 }}</p>
-    <p>Published: {{ post.created_at }}</p>
-    <hr>
-{% endfor %}
+{% extends "simpleblog/base.html" %}
+
+{% block content %}
+    <h1>Blog Posts</h1>
+    {% if posts %}
+        {% for post in posts %}
+            <div class="post">
+                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                <p>{{ post.content|truncatewords:30 }}</p>
+                <p>Published: {{ post.created_at|date:"F j, Y" }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No blog posts available yet.</p>
+    {% endif %}
+{% endblock content %}
