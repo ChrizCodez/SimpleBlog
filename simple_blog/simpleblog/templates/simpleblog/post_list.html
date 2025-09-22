@@ -1,0 +1,7 @@
+<h1>Blog Posts</h1>
+{% for post in posts %}
+    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+    <p>{{ post.content|truncatewords:30 }}</p>
+    <p>Published: {{ post.created_at }}</p>
+    <hr>
+{% endfor %}
